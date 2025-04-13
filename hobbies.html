@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pinzhang Chen - Home</title>
-  <!-- Import Google Icon Font -->
+  <title>Pinzhang Chen - Hobbies</title>
+  <!-- Google Icon Font -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Import Materialize CSS -->
+  <!-- Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <!-- Ensures mobile responsiveness -->
+  <!-- Mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 </head>
 <body>
 
-  <!-- NAVBAR (shared across all pages) -->
+  <!-- NAVBAR -->
   <nav class="nav-wrapper deep-purple lighten-2">
     <div class="container">
       <a href="#" class="brand-logo center">Pinzhang Chen</a>
-      <!-- Mobile menu trigger -->
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <!-- Desktop Menu -->
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
@@ -29,7 +27,7 @@
     </div>
   </nav>
 
-  <!-- Sidenav (appears on mobile) -->
+  <!-- Sidenav (mobile) -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="index.html">Home</a></li>
     <li><a href="music.html">Music</a></li>
@@ -38,13 +36,18 @@
     <li><a href="coding.html">Coding Projects</a></li>
   </ul>
 
-  <!-- MAIN CONTENT: HOMEPAGE -->
+  <!-- MAIN CONTENT: HOBBIES -->
   <div class="container center-align" style="margin-top: 40px;">
-    <h2>Welcome to My Personal Website!</h2>
+    <h3>My Hobbies</h3>
     <p class="flow-text">
-      Hello! I’m Pinzhang Chen. I compose original music, play piano, write code, and love exploring new hobbies.  
-      Feel free to browse around and learn more about my work and interests.
+      Besides music, I enjoy:
     </p>
+    <ul class="collection center-align" style="max-width: 600px; margin: 0 auto;">
+      <li class="collection-item">Reading about philosophy and history</li>
+      <li class="collection-item">Learning new programming languages</li>
+      <li class="collection-item">Playing strategy board games</li>
+      <li class="collection-item">Hiking and nature photography</li>
+    </ul>
   </div>
 
   <!-- FOOTER -->
@@ -54,7 +57,7 @@
     </div>
   </footer>
 
-  <!-- Import Materialize JavaScript (for sidenav, etc.) -->
+  <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -62,5 +65,6 @@
       M.Sidenav.init(elems);
     });
   </script>
+
 </body>
 </html>

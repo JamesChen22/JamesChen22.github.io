@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pinzhang Chen - Home</title>
+  <title>Pinzhang Chen - Music</title>
   <!-- Import Google Icon Font -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Import Materialize CSS -->
@@ -12,13 +12,11 @@
 </head>
 <body>
 
-  <!-- NAVBAR (shared across all pages) -->
+  <!-- NAVBAR -->
   <nav class="nav-wrapper deep-purple lighten-2">
     <div class="container">
       <a href="#" class="brand-logo center">Pinzhang Chen</a>
-      <!-- Mobile menu trigger -->
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <!-- Desktop Menu -->
       <ul class="right hide-on-med-and-down">
         <li><a href="index.html">Home</a></li>
         <li><a href="music.html">Music</a></li>
@@ -29,7 +27,7 @@
     </div>
   </nav>
 
-  <!-- Sidenav (appears on mobile) -->
+  <!-- Sidenav (mobile) -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="index.html">Home</a></li>
     <li><a href="music.html">Music</a></li>
@@ -38,13 +36,51 @@
     <li><a href="coding.html">Coding Projects</a></li>
   </ul>
 
-  <!-- MAIN CONTENT: HOMEPAGE -->
+  <!-- MAIN CONTENT: MUSIC CARDS -->
   <div class="container center-align" style="margin-top: 40px;">
-    <h2>Welcome to My Personal Website!</h2>
-    <p class="flow-text">
-      Hello! I’m Pinzhang Chen. I compose original music, play piano, write code, and love exploring new hobbies.  
-      Feel free to browse around and learn more about my work and interests.
-    </p>
+    <h3>My Original Compositions</h3>
+    
+    <!-- Example Row of Cards -->
+    <div class="row">
+
+      <!-- Card 1 -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/birdview.png" alt="Birdview Score">
+            <span class="card-title">Birdview</span>
+          </div>
+          <div class="card-content">
+            <p>
+              A gentle and uplifting piano piece inspired by the peaceful feeling of birdwatching.
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="audio/birdview.mp3" target="_blank">Listen</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col s12 m6 l4">
+        <div class="card">
+          <div class="card-image">
+            <img src="images/sample_score.png" alt="Sample Score">
+            <span class="card-title">Evening Solitude</span>
+          </div>
+          <div class="card-content">
+            <p>
+              A reflective piece capturing the quiet atmosphere of late evenings.
+            </p>
+          </div>
+          <div class="card-action">
+            <a href="audio/evening_solitude.mp3" target="_blank">Listen</a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Add more cards as you like -->
+    </div>
   </div>
 
   <!-- FOOTER -->
@@ -54,7 +90,7 @@
     </div>
   </footer>
 
-  <!-- Import Materialize JavaScript (for sidenav, etc.) -->
+  <!-- Materialize JS -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
