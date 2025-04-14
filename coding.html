@@ -2,30 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pinzhang Chen - Coding Projects</title>
-  <!-- Google Icon Font -->
+  <title>James Chen - Coding Projects</title>
+  <!-- Import Google Icon Font -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS -->
+  <!-- Import Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <!-- Mobile responsiveness -->
+  <!-- Ensures mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    main {
+      margin-top: 70px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="nav-wrapper deep-purple lighten-2">
-    <div class="container">
-      <a href="#" class="brand-logo center">Pinzhang Chen</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="videos.html">Piano Videos</a></li>
-        <li><a href="hobbies.html">Hobbies</a></li>
-        <li><a href="coding.html">Coding Projects</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- FIXED NAVBAR -->
+  <div class="navbar-fixed">
+    <nav style="background-color: #355E3B;">
+      <div class="container">
+        <a href="index.html" class="brand-logo left">James Chen</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="videos.html">Piano Videos</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="coding.html">Coding Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
   <!-- Sidenav (mobile) -->
   <ul class="sidenav" id="mobile-demo">
@@ -37,56 +46,55 @@
   </ul>
 
   <!-- MAIN CONTENT: CODING PROJECTS -->
-  <div class="container center-align" style="margin-top: 40px;">
-    <h3>Coding Projects</h3>
-
-    <!-- Example project cards -->
-    <div class="row">
-      
-      <!-- Project 1 -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Music Notation App</span>
-            <p>
-              A web-based tool that helps me notate and share music compositions easily.
-              Built with JavaScript, HTML5 Canvas, and Node.js on the backend.
-            </p>
-          </div>
-          <div class="card-action">
-            <a href="#" target="_blank">View Repo</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Project 2 -->
-      <div class="col s12 m6 l4">
-        <div class="card">
-          <div class="card-content">
-            <span class="card-title">Piano Chords Analyzer</span>
-            <p>
-              A Python-based desktop application that listens to real-time piano input 
-              and identifies chord names for practice sessions.
-            </p>
-          </div>
-          <div class="card-action">
-            <a href="#" target="_blank">View Repo</a>
+  <main>
+    <div class="container center-align">
+      <h3>Coding Projects</h3>
+      <div class="row">
+        <!-- Project 1 -->
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Music Notation App</span>
+              <p>
+                A web-based tool that helps me notate and share music compositions easily.
+                Built with JavaScript, HTML5 Canvas, and Node.js on the backend.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#" target="_blank">View Repo</a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <!-- More projects here -->
+        <!-- Project 2 -->
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-content">
+              <span class="card-title">Piano Chords Analyzer</span>
+              <p>
+                A Python-based desktop application that listens to real-time piano input 
+                and identifies chord names for practice sessions.
+              </p>
+            </div>
+            <div class="card-action">
+              <a href="#" target="_blank">View Repo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional projects can be added here -->
+      </div>
     </div>
-  </div>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="page-footer deep-purple lighten-2">
+  <footer class="page-footer" style="background-color: #355E3B;">
     <div class="container center-align">
-      <p class="white-text">© 2025 Pinzhang Chen. All rights reserved.</p>
+      <p class="black-text">© 2025 James Chen. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Materialize JS -->
+  <!-- Materialize JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {

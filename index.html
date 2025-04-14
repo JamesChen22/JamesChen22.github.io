@@ -2,34 +2,42 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pinzhang Chen - Home</title>
+  <title>James Chen - Home</title>
   <!-- Import Google Icon Font -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- Import Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
   <!-- Ensures mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    /* Prevent main content from being hidden under the fixed navbar */
+    main {
+      margin-top: 70px;
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR (shared across all pages) -->
-  <nav class="nav-wrapper deep-purple lighten-2">
-    <div class="container">
-      <a href="#" class="brand-logo center">Pinzhang Chen</a>
-      <!-- Mobile menu trigger -->
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <!-- Desktop Menu -->
-      <ul class="right hide-on-med-and-down">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="music.html">Music</a></li>
-        <li><a href="videos.html">Piano Videos</a></li>
-        <li><a href="hobbies.html">Hobbies</a></li>
-        <li><a href="coding.html">Coding Projects</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- FIXED NAVBAR -->
+  <div class="navbar-fixed">
+    <nav style="background-color: #355E3B;">
+      <div class="container">
+        <a href="index.html" class="brand-logo left">James Chen</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="music.html">Music</a></li>
+          <li><a href="videos.html">Piano Videos</a></li>
+          <li><a href="hobbies.html">Hobbies</a></li>
+          <li><a href="coding.html">Coding Projects</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
 
-  <!-- Sidenav (appears on mobile) -->
+  <!-- Sidenav (mobile) -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="index.html">Home</a></li>
     <li><a href="music.html">Music</a></li>
@@ -38,23 +46,26 @@
     <li><a href="coding.html">Coding Projects</a></li>
   </ul>
 
-  <!-- MAIN CONTENT: HOMEPAGE -->
-  <div class="container center-align" style="margin-top: 40px;">
-    <h2>Welcome to My Personal Website!</h2>
-    <p class="flow-text">
-      Hello! I’m Pinzhang Chen. I compose original music, play piano, write code, and love exploring new hobbies.  
-      Feel free to browse around and learn more about my work and interests.
-    </p>
-  </div>
+  <!-- MAIN CONTENT -->
+  <main>
+    <div class="container center-align">
+      <h2>Welcome to My Personal Website!</h2>
+      <p class="flow-text">
+        Hello! I’m James Chen. I compose original music, play piano, write code, 
+        and love exploring new hobbies. Feel free to browse around and learn more 
+        about my work and interests.
+      </p>
+    </div>
+  </main>
 
   <!-- FOOTER -->
-  <footer class="page-footer deep-purple lighten-2">
+  <footer class="page-footer" style="background-color: #355E3B;">
     <div class="container center-align">
-      <p class="white-text">© 2025 Pinzhang Chen. All rights reserved.</p>
+      <p class="black-text">© 2025 James Chen. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Import Materialize JavaScript (for sidenav, etc.) -->
+  <!-- Materialize JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
