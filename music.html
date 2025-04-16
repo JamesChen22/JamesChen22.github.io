@@ -2,16 +2,18 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>James Chen - Music</title>
-  <!-- Import Google Icon Font -->
+  <title>James Chen – Music</title>
+  <!-- Google Icon Font -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Import Materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <!-- Ensures mobile responsiveness -->
+  <!-- Materialize CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+  />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <style>
     main {
-      margin-top: 70px;
+      margin-top: 70px; /* push content below fixed navbar */
     }
   </style>
 </head>
@@ -27,7 +29,7 @@
         </a>
         <ul class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
-          <li><a href="music.html">Music</a></li>
+          <li class="active"><a href="music.html">Music</a></li>
           <li><a href="videos.html">Piano Videos</a></li>
           <li><a href="hobbies.html">Hobbies</a></li>
           <li><a href="coding.html">Coding Projects</a></li>
@@ -36,60 +38,150 @@
     </nav>
   </div>
 
-  <!-- Sidenav (mobile) -->
+  <!-- SIDENAV FOR MOBILE -->
   <ul class="sidenav" id="mobile-demo">
     <li><a href="index.html">Home</a></li>
-    <li><a href="music.html">Music</a></li>
+    <li class="active"><a href="music.html">Music</a></li>
     <li><a href="videos.html">Piano Videos</a></li>
     <li><a href="hobbies.html">Hobbies</a></li>
     <li><a href="coding.html">Coding Projects</a></li>
   </ul>
 
-  <!-- MAIN CONTENT: MUSIC CARDS -->
   <main>
-    <div class="container center-align">
-      <h3>My Original Compositions</h3>
-      
+    <div class="container">
+      <h3 class="center-align">My Original Compositions</h3>
       <div class="row">
-        <!-- Card 1 -->
+
+        <!-- Birdview -->
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
-              <img src="images/birdview.png" alt="Birdview Score">
+              <img src="imgs/Birdview.jpg" alt="Birdview Score">
+              <br><br><br><br>
               <span class="card-title black-text">Birdview</span>
             </div>
             <div class="card-content">
               <p>
-                A gentle and uplifting piano piece inspired by the peaceful feeling of birdwatching.
+                I was at Rockefeller Center in New York, and from the rooftop I watched the sunset skyline of the city.<br>
+                That moment inspired me to write this piece, “Birdview.”
               </p>
             </div>
             <div class="card-action">
-              <a href="audio/birdview.mp3" target="_blank">Listen</a>
+              <audio controls src="music/Birdview.mp3"></audio>
             </div>
           </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- The Mild Wind in Spring -->
         <div class="col s12 m6 l4">
           <div class="card">
             <div class="card-image">
-              <img src="images/sample_score.png" alt="Sample Score">
-              <span class="card-title black-text">Evening Solitude</span>
+              <img src="imgs/Spring.jpg" alt="Spring Wind Score">
+              <br><br><br><br>
+              <span class="card-title black-text">The Mild Wind in Spring</span>
             </div>
             <div class="card-content">
               <p>
-                A reflective piece capturing the quiet atmosphere of late evenings.
+                Gathered in the fields brushed by a gentle spring breeze,<br>
+                the softly swaying blossoms are the wind’s own gift.<br>
+                <em>[Composed on March 24, 2020]</em>
               </p>
             </div>
             <div class="card-action">
-              <a href="audio/evening_solitude.mp3" target="_blank">Listen</a>
+              <audio controls src="music/Spring.mp3"></audio>
             </div>
           </div>
         </div>
-        
-        <!-- Additional cards can be added here -->
+
+        <!-- Looking Up -->
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="imgs/LU.jpg" alt="Looking Up Score">
+              <br><br><br><br>
+              <span class="card-title black-text">Looking Up</span>
+            </div>
+            <div class="card-content">
+              <p>
+                Late at night I gazed into the depths of the starry sky,<br>
+                as constellations lit up the heavens like a silver screen.<br>
+                This piece captures that flash of inspiration—and<br>
+                the feeling of waiting through the darkest hours for dawn.<br>
+                <em>[Composed in February 2020]</em>
+              </p>
+            </div>
+            <div class="card-action">
+              <audio controls src="music/LU.mp3"></audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- A Day in Summer -->
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="imgs/Summer.jpg" alt="A Day in Summer Score">
+              <br><br><br><br>
+              <span class="card-title black-text">A Day in Summer</span>
+            </div>
+            <div class="card-content">
+              <p>
+                A scorching summer day filled with hope and cool relief—<br>
+                moments of gentle warmth, moments of floral shade.<br>
+                <em>[Composed on April 4, 2020]</em>
+              </p>
+            </div>
+            <div class="card-action">
+              <audio controls src="music/Summer.mp3"></audio>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cloudy -->
+        <div class="col s12 m6 l4">
+          <div class="card">
+            <div class="card-image">
+              <img src="imgs/cdy.jpg" alt="Cloudy Score">
+              <br><br><br><br>
+              <span class="card-title black-text">Cloudy</span>
+            </div>
+            <div class="card-content">
+              <p>
+                All my feelings for overcast skies are condensed into<br>
+                the rumbling thunder and drifting clouds of this piece.<br>
+                <em>[Composed on February 28, 2020]</em>
+              </p>
+            </div>
+            <div class="card-action">
+              <audio controls src="music/Cloudy.mp3"></audio>
+            </div>
+          </div>
+        </div>
+
+      </div> <!-- /row -->
+
+      <!-- Certificates Section -->
+      <div class="section">
+        <h5 class="center-align">★ Registration Certificates</h5>
+        <div class="row">
+          <div class="col s12 m6">
+            <img
+              src="imgs/MusicCert.jpg"
+              alt="Music Registration Certificate"
+              class="responsive-img"
+            >
+          </div>
+          <div class="col s12 m6">
+            <img
+              src="imgs/RecrCert.jpg"
+              alt="Recording Certificate"
+              class="responsive-img"
+            >
+          </div>
+        </div>
       </div>
-    </div>
+
+    </div> <!-- /container -->
   </main>
 
   <!-- FOOTER -->
@@ -99,12 +191,11 @@
     </div>
   </footer>
 
-  <!-- Materialize JavaScript -->
+  <!-- Materialize JS & Initialization -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(elems);
+    document.addEventListener('DOMContentLoaded', function(){
+      M.Sidenav.init(document.querySelectorAll('.sidenav'));
     });
   </script>
 </body>
