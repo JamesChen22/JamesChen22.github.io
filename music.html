@@ -2,201 +2,310 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>James Chen – Music</title>
-  <!-- Google Icon Font -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Materialize CSS -->
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
-  />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>James Chen — Music</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    main {
-      margin-top: 70px; /* push content below fixed navbar */
+    .page-hero {
+      padding: 48px 0 40px;
+    }
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+    .page-hero p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 540px;
+      line-height: 1.7;
+    }
+
+    /* COMPOSITION CARDS */
+    .compositions-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 80px;
+    }
+
+    .composition-card {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .composition-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      border-radius: 16px 16px 0 0;
+    }
+
+    .composition-body {
+      padding: 20px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .composition-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .composition-desc {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      flex: 1;
+      margin-bottom: 16px;
+    }
+
+    .composition-date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    /* FILM STUDIO HIGHLIGHT */
+    .film-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      background: rgba(251,191,36,0.12);
+      border: 1px solid rgba(251,191,36,0.3);
+      border-radius: 8px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: #fde68a;
+      margin-bottom: 12px;
+    }
+
+    /* ACHIEVEMENTS BANNER */
+    .achievements-banner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 64px;
+    }
+
+    .achievement-tile {
+      padding: 24px;
+      text-align: center;
+    }
+
+    .achievement-tile .big {
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .achievement-tile h4 {
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .achievement-tile p {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* CERTIFICATES */
+    .certs-section {
+      margin-bottom: 80px;
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .cert-img {
+      width: 100%;
+      border-radius: var(--radius-md);
+      display: block;
+      border: 1px solid var(--glass-border);
+    }
+
+    @media (max-width: 900px) {
+      .compositions-grid { grid-template-columns: repeat(2, 1fr); }
+      .achievements-banner { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 600px) {
+      .compositions-grid { grid-template-columns: 1fr; }
+      .certs-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
 
-  <!-- FIXED NAVBAR -->
-  <div class="navbar-fixed">
-    <nav style="background-color: #355E3B;">
-      <div class="container">
-        <a href="index.html" class="brand-logo left">James Chen</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
+  <div class="aurora-bg"><div class="aurora-orb"></div></div>
+
+  <div class="nav-wrapper">
+    <nav class="glass-nav">
+      <a href="index.html" class="nav-brand">Pinzhang (James) Chen</a>
+      <div class="nav-right">
+        <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
-          <li class="active"><a href="music.html">Music</a></li>
+          <li><a href="music.html" class="active">Music</a></li>
           <li><a href="videos.html">Piano Videos</a></li>
+          <li><a href="coding.html">Coding</a></li>
           <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="coding.html">Coding Projects</a></li>
+          <li><a href="photos.html">Photos</a></li>
         </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
 
-  <!-- SIDENAV FOR MOBILE -->
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="index.html">Home</a></li>
-    <li class="active"><a href="music.html">Music</a></li>
-    <li><a href="videos.html">Piano Videos</a></li>
-    <li><a href="hobbies.html">Hobbies</a></li>
-    <li><a href="coding.html">Coding Projects</a></li>
-  </ul>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="videos.html">Piano Videos</a>
+    <a href="coding.html">Coding</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="photos.html">Photos</a>
+  </div>
 
   <main>
     <div class="container">
-      <h3 class="center-align">My Original Compositions</h3>
-      <div class="row">
 
-        <!-- Birdview -->
-        <div class="col s12 m6 l4">
-          <div class="card">
-            <div class="card-image">
-              <img src="imgs/Birdview.jpg" alt="Birdview Score">
-              <br><br><br><br>
-              <span class="card-title black-text">Birdview</span>
-            </div>
-            <div class="card-content">
-              <p>
-                I was at Rockefeller Center in New York, and from the rooftop I watched the sunset skyline of the city.<br>
-                That moment inspired me to write this piece, “Birdview.”
-              </p>
-            </div>
-            <div class="card-action">
-              <audio controls src="music/Birdview.mp3"></audio>
-            </div>
-          </div>
+      <section class="page-hero">
+        <span class="badge badge-purple" style="margin-bottom:16px; display:inline-flex;">🎼 Original Compositions</span>
+        <h1><span class="gradient-text">Music</span></h1>
+        <p>
+          I've composed 5 original piano pieces, each rooted in a real moment or emotion.
+          One piece holds copyright registration and was acquired by a Chinese film studio for their production library.
+        </p>
+      </section>
+
+      <!-- ACHIEVEMENT TILES -->
+      <div class="achievements-banner">
+        <div class="glass-card achievement-tile">
+          <div class="big">🏆</div>
+          <h4>Grand Prix × 2</h4>
+          <p>Music Fest Rising Talents Festival 2024–25 & 2025–26, New York</p>
         </div>
-
-        <!-- The Mild Wind in Spring -->
-        <div class="col s12 m6 l4">
-          <div class="card">
-            <div class="card-image">
-              <img src="imgs/Spring.jpg" alt="Spring Wind Score">
-              <br><br><br><br>
-              <span class="card-title black-text">The Mild Wind in Spring</span>
-            </div>
-            <div class="card-content">
-              <p>
-                Gathered in the fields brushed by a gentle spring breeze,<br>
-                the softly swaying blossoms are the wind’s own gift.<br>
-                <em>[Composed on March 24, 2020]</em>
-              </p>
-            </div>
-            <div class="card-action">
-              <audio controls src="music/Spring.mp3"></audio>
-            </div>
-          </div>
+        <div class="glass-card achievement-tile">
+          <div class="big">🎭</div>
+          <h4>Carnegie Hall × 2</h4>
+          <p>Performed March 29, 2025 and May 17, 2025 in New York City</p>
         </div>
-
-        <!-- Looking Up -->
-        <div class="col s12 m6 l4">
-          <div class="card">
-            <div class="card-image">
-              <img src="imgs/LU.jpg" alt="Looking Up Score">
-              <br><br><br><br>
-              <span class="card-title black-text">Looking Up</span>
-            </div>
-            <div class="card-content">
-              <p>
-                Late at night I gazed into the depths of the starry sky,<br>
-                as constellations lit up the heavens like a silver screen.<br>
-                This piece captures that flash of inspiration—and<br>
-                the feeling of waiting through the darkest hours for dawn.<br>
-                <em>[Composed in February 2020]</em>
-              </p>
-            </div>
-            <div class="card-action">
-              <audio controls src="music/LU.mp3"></audio>
-            </div>
-          </div>
-        </div>
-
-        <!-- A Day in Summer -->
-        <div class="col s12 m6 l4">
-          <div class="card">
-            <div class="card-image">
-              <img src="imgs/Summer.jpg" alt="A Day in Summer Score">
-              <br><br><br><br>
-              <span class="card-title black-text">A Day in Summer</span>
-            </div>
-            <div class="card-content">
-              <p>
-                A scorching summer day filled with hope and cool relief—<br>
-                moments of gentle warmth, moments of floral shade.<br>
-                <em>[Composed on April 4, 2020]</em>
-              </p>
-            </div>
-            <div class="card-action">
-              <audio controls src="music/Summer.mp3"></audio>
-            </div>
-          </div>
-        </div>
-
-        <!-- Cloudy -->
-        <div class="col s12 m6 l4">
-          <div class="card">
-            <div class="card-image">
-              <img src="imgs/cdy.jpg" alt="Cloudy Score">
-              <br><br><br><br>
-              <span class="card-title black-text">Cloudy</span>
-            </div>
-            <div class="card-content">
-              <p>
-                All my feelings for overcast skies are condensed into<br>
-                the rumbling thunder and drifting clouds of this piece.<br>
-                <em>[Composed on February 28, 2020]</em>
-              </p>
-            </div>
-            <div class="card-action">
-              <audio controls src="music/Cloudy.mp3"></audio>
-            </div>
-          </div>
-        </div>
-
-      </div> <!-- /row -->
-
-      <!-- Certificates Section -->
-      <div class="section">
-        <h5 class="center-align">★ Registration Certificates</h5>
-        <div class="row">
-          <div class="col s12 m6">
-            <img
-              src="imgs/MusicCert.jpg"
-              alt="Music Registration Certificate"
-              class="responsive-img"
-            >
-          </div>
-          <div class="col s12 m6">
-            <img
-              src="imgs/RecrCert.jpg"
-              alt="Recording Certificate"
-              class="responsive-img"
-            >
-          </div>
+        <div class="glass-card achievement-tile">
+          <div class="big">🎬</div>
+          <h4>Film Studio Acquisition</h4>
+          <p>An original composition acquired by a Chinese film studio for their production library</p>
         </div>
       </div>
 
-    </div> <!-- /container -->
+      <!-- COMPOSITIONS -->
+      <section class="section">
+        <div class="section-title">Original Pieces</div>
+        <p class="section-subtitle">Composed, recorded, and registered — all original works</p>
+        <div class="compositions-grid">
+
+          <!-- Birdview -->
+          <div class="glass-card composition-card">
+            <img src="imgs/Birdview.jpg" alt="Birdview Score" class="composition-img">
+            <div class="composition-body">
+              <div class="film-badge">🎬 Acquired by Film Studio</div>
+              <div class="composition-title">Birdview</div>
+              <div class="composition-desc">
+                At the top of Rockefeller Center, I watched the sunset skyline of New York City stretch out beneath me. That moment of perspective — the city humming below, the sky on fire — became this piece.
+              </div>
+              <audio controls src="music/Birdview.mp3"></audio>
+            </div>
+          </div>
+
+          <!-- The Mild Wind in Spring -->
+          <div class="glass-card composition-card">
+            <img src="imgs/Spring.jpg" alt="Spring Wind Score" class="composition-img">
+            <div class="composition-body">
+              <div class="composition-title">The Mild Wind in Spring</div>
+              <div class="composition-desc">
+                Gathered in the fields brushed by a gentle spring breeze, the softly swaying blossoms are the wind's own gift.
+              </div>
+              <div class="composition-date">Composed March 24, 2020</div>
+              <audio controls src="music/Spring.mp3"></audio>
+            </div>
+          </div>
+
+          <!-- Looking Up -->
+          <div class="glass-card composition-card">
+            <img src="imgs/LU.jpg" alt="Looking Up Score" class="composition-img">
+            <div class="composition-body">
+              <div class="composition-title">Looking Up</div>
+              <div class="composition-desc">
+                Late at night I gazed into the depths of the starry sky, as constellations lit up the heavens like a silver screen. This piece captures that flash of inspiration — and the feeling of waiting through the darkest hours for dawn.
+              </div>
+              <div class="composition-date">Composed February 2020</div>
+              <audio controls src="music/LU.mp3"></audio>
+            </div>
+          </div>
+
+          <!-- A Day in Summer -->
+          <div class="glass-card composition-card">
+            <img src="imgs/Summer.jpg" alt="A Day in Summer Score" class="composition-img">
+            <div class="composition-body">
+              <div class="composition-title">A Day in Summer</div>
+              <div class="composition-desc">
+                A scorching summer day filled with hope and cool relief — moments of gentle warmth, moments of floral shade.
+              </div>
+              <div class="composition-date">Composed April 4, 2020</div>
+              <audio controls src="music/Summer.mp3"></audio>
+            </div>
+          </div>
+
+          <!-- Cloudy -->
+          <div class="glass-card composition-card">
+            <img src="imgs/cdy.jpg" alt="Cloudy Score" class="composition-img">
+            <div class="composition-body">
+              <div class="composition-title">Cloudy</div>
+              <div class="composition-desc">
+                All my feelings for overcast skies — condensed into rumbling thunder and drifting clouds.
+              </div>
+              <div class="composition-date">Composed February 28, 2020</div>
+              <audio controls src="music/Cloudy.mp3"></audio>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CERTIFICATES -->
+      <section class="certs-section">
+        <div class="section-title">Registration Certificates</div>
+        <p class="section-subtitle">Copyright and intellectual property registration for original work</p>
+        <div class="certs-grid">
+          <div>
+            <img src="imgs/MusicCert.jpg" alt="Music Registration Certificate" class="cert-img">
+          </div>
+          <div>
+            <img src="imgs/RecrCert.jpg" alt="Recording Certificate" class="cert-img">
+          </div>
+        </div>
+      </section>
+
+    </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="page-footer" style="background-color: #355E3B;">
-    <div class="container center-align">
-      <p class="black-text">© 2025 James Chen. All rights reserved.</p>
-    </div>
+  <footer class="glass-footer">
+    <p>© 2025 Pinzhang (James) Chen · <a href="mailto:28ChenP@sagehillschool.org">28ChenP@sagehillschool.org</a></p>
   </footer>
 
-  <!-- Materialize JS & Initialization -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function(){
-      M.Sidenav.init(document.querySelectorAll('.sidenav'));
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>

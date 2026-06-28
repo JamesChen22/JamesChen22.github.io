@@ -2,76 +2,520 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>James Chen - Home</title>
-  <!-- Import Google Icon Font -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <!-- Import Materialize CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <!-- Ensures mobile responsiveness -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>James Chen</title>
+  <link rel="stylesheet" href="style.css" />
   <style>
-    /* Prevent main content from being hidden under the fixed navbar */
-    main {
-      margin-top: 70px;
+    /* ===== HERO ===== */
+    .hero {
+      padding: 80px 0 60px;
+      position: relative;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(74,122,74,0.12);
+      border: 1px solid rgba(74,122,74,0.28);
+      border-radius: 100px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-purple);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.7); }
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 9vw, 6.5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: var(--text-secondary);
+      max-width: 600px;
+      line-height: 1.7;
+      margin-bottom: 36px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 60px;
+    }
+
+    /* ===== STATS ===== */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 80px;
+    }
+
+    .stat-card {
+      padding: 24px 20px;
+      text-align: center;
+    }
+
+    .stat-num {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      display: block;
+    }
+
+    .stat-label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 4px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 80px;
+    }
+
+    .about-main {
+      padding: 36px;
+    }
+
+    .about-main h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+
+    .about-main p {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 16px;
+      font-size: 0.95rem;
+    }
+
+    .skills-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .skill-group {
+      padding: 20px;
+    }
+
+    .skill-group-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .skill-tag {
+      padding: 4px 10px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 6px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    /* ===== HIGHLIGHTS ===== */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 80px;
+    }
+
+    .highlight-card {
+      padding: 28px 24px;
+    }
+
+    .highlight-icon {
+      font-size: 1.8rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .highlight-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .highlight-card p {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    /* ===== AWARDS ===== */
+    .awards-section {
+      margin-bottom: 80px;
+    }
+
+    .awards-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .award-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+    }
+
+    .award-icon {
+      font-size: 1.4rem;
+      flex-shrink: 0;
+    }
+
+    .award-info {
+      flex: 1;
+    }
+
+    .award-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .award-detail {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+    }
+
+    .award-year {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .highlights-grid { grid-template-columns: repeat(2, 1fr); }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 600px) {
+      .highlights-grid { grid-template-columns: 1fr; }
+      .stats-row { grid-template-columns: repeat(2, 1fr); }
+      .hero h1 { font-size: 3rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- FIXED NAVBAR -->
-  <div class="navbar-fixed">
-    <nav style="background-color: #355E3B;">
-      <div class="container">
-        <a href="index.html" class="brand-logo left">James Chen</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger">
-          <i class="material-icons">menu</i>
-        </a>
-        <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
+  <div class="aurora-bg"><div class="aurora-orb"></div></div>
+
+  <!-- NAVBAR -->
+  <div class="nav-wrapper">
+    <nav class="glass-nav">
+      <a href="index.html" class="nav-brand">Pinzhang (James) Chen</a>
+      <div class="nav-right">
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="music.html">Music</a></li>
           <li><a href="videos.html">Piano Videos</a></li>
+          <li><a href="coding.html">Coding</a></li>
           <li><a href="hobbies.html">Hobbies</a></li>
-          <li><a href="coding.html">Coding Projects</a></li>
+          <li><a href="photos.html">Photos</a></li>
         </ul>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">🌙</button>
+        <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
     </nav>
   </div>
 
-  <!-- Sidenav (mobile) -->
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="music.html">Music</a></li>
-    <li><a href="videos.html">Piano Videos</a></li>
-    <li><a href="hobbies.html">Hobbies</a></li>
-    <li><a href="coding.html">Coding Projects</a></li>
-  </ul>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="music.html">Music</a>
+    <a href="videos.html">Piano Videos</a>
+    <a href="coding.html">Coding</a>
+    <a href="hobbies.html">Hobbies</a>
+    <a href="photos.html">Photos</a>
+  </div>
 
-  <!-- MAIN CONTENT -->
   <main>
-    <div class="container center-align">
-      <h2>Welcome to My Personal Website!</h2>
-      <p class="flow-text">
-        Hello! I’m James Chen. I compose original music, play piano, write code, 
-        and love exploring new hobbies. Feel free to browse around and learn more 
-        about my work and interests.
-      </p>
+    <div class="container">
+
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-eyebrow">Newport Coast, CA &nbsp;·&nbsp; Sage Hill School</div>
+        <h1><span class="gradient-text">James<br>Chen</span></h1>
+        <p class="hero-sub">
+          Pianist · Composer · Software Engineer · Roboticist.<br>
+          I turn curiosity into compositions, code, and competition medals.
+        </p>
+        <div class="hero-cta">
+          <a href="music.html" class="btn-glass">🎵 My Compositions</a>
+          <a href="coding.html" class="btn-glass-cyan btn-glass">💻 Coding Projects</a>
+          <a href="photos.html" class="btn-glass">📷 Photography</a>
+        </div>
+      </section>
+
+      <!-- STATS -->
+      <div class="stats-row">
+        <div class="glass-card stat-card">
+          <span class="stat-num gradient-text">4.56</span>
+          <span class="stat-label">GPA · Sage Hill</span>
+        </div>
+        <div class="glass-card stat-card">
+          <span class="stat-num gradient-text">1520</span>
+          <span class="stat-label">PSAT Score</span>
+        </div>
+        <div class="glass-card stat-card">
+          <span class="stat-num gradient-text">2×</span>
+          <span class="stat-label">Carnegie Hall</span>
+        </div>
+        <div class="glass-card stat-card">
+          <span class="stat-num gradient-text">5+</span>
+          <span class="stat-label">Grand Prix Awards</span>
+        </div>
+      </div>
+
+      <!-- ABOUT + SKILLS -->
+      <section class="section about-grid">
+        <div class="glass-card about-main">
+          <h2>About Me</h2>
+          <p>
+            I'm a student at <strong style="color:#c4b5fd">Sage Hill School</strong> in Newport Coast, California with a 4.56 GPA.
+            I've attended summer programs at NYU, UPenn, and Tufts — and I bring the same intensity to piano competitions as I do to robotics and AI development.
+          </p>
+          <p>
+            On the piano, I've performed at <strong style="color:#67e8f9">Carnegie Hall twice</strong>, earned multiple Grand Prix and Gold distinctions in international competitions, and composed 5 original pieces — one of which was acquired by a Chinese film studio.
+          </p>
+          <p>
+            In tech, I build AI-powered tools with Python, LangChain, and Java. I design robot subsystems with the FTC SDK, contribute CAD in Fusion 360, and research AI evaluation models with published academic work.
+          </p>
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;">
+            <span class="badge badge-gold">📄 Published Researcher</span>
+            <span class="badge badge-cyan">🤖 Robotics</span>
+            <span class="badge badge-purple">🎹 Carnegie Hall</span>
+            <span class="badge badge-indigo">🌐 3 Languages</span>
+          </div>
+        </div>
+
+        <div class="skills-stack">
+          <div class="glass-card skill-group">
+            <div class="skill-group-label">Programming Languages</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Java</span>
+              <span class="skill-tag">C++</span>
+              <span class="skill-tag">C</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Unity C#</span>
+              <span class="skill-tag">SAL/Nyquist</span>
+            </div>
+          </div>
+          <div class="glass-card skill-group">
+            <div class="skill-group-label">Frameworks & Tools</div>
+            <div class="skill-tags">
+              <span class="skill-tag">LangChain</span>
+              <span class="skill-tag">OpenAI APIs</span>
+              <span class="skill-tag">FTC SDK</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Jupyter</span>
+              <span class="skill-tag">VS Code</span>
+            </div>
+          </div>
+          <div class="glass-card skill-group">
+            <div class="skill-group-label">Engineering & Making</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Fusion 360</span>
+              <span class="skill-tag">Onshape CAD</span>
+              <span class="skill-tag">3D Printing</span>
+              <span class="skill-tag">Soldering</span>
+              <span class="skill-tag">Wiring</span>
+            </div>
+          </div>
+          <div class="glass-card skill-group">
+            <div class="skill-group-label">Languages</div>
+            <div class="skill-tags">
+              <span class="skill-tag">English</span>
+              <span class="skill-tag">Mandarin Chinese</span>
+              <span class="skill-tag">Spanish (Intermediate)</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="section">
+        <div class="section-title">What I Do</div>
+        <p class="section-subtitle">A snapshot of my world</p>
+        <div class="highlights-grid">
+          <div class="glass-card highlight-card">
+            <span class="highlight-icon">🎹</span>
+            <h3>Piano Performance</h3>
+            <p>10+ years of classical training, Central Conservatory Level 9. Performed Rachmaninoff and Chopin at Carnegie Hall and international competitions.</p>
+          </div>
+          <div class="glass-card highlight-card">
+            <span class="highlight-icon">🎼</span>
+            <h3>Original Compositions</h3>
+            <p>5 original compositions with copyright registration. One piece acquired by a Chinese film studio for their production library.</p>
+          </div>
+          <div class="glass-card highlight-card">
+            <span class="highlight-icon">🤖</span>
+            <h3>Robotics Engineering</h3>
+            <p>Software designer on FTC team — programmed tele-op and autonomous subsystems in Java, fine-tuned drivetrain responsiveness, designed CAD components.</p>
+          </div>
+          <div class="glass-card highlight-card">
+            <span class="highlight-icon">🧠</span>
+            <h3>AI Development</h3>
+            <p>Built AI tutoring chatbot with Python & LangChain (selected from 14 submissions). Developed AI pet camera with anomaly detection. Researched AI music evaluation.</p>
+          </div>
+          <div class="glass-card highlight-card">
+            <span class="highlight-icon">🏆</span>
+            <h3>Competition Winner</h3>
+            <p>Grand Prix at Music Fest Rising Talents, Gold at Golden Key Music Festival, Diamond Challenge group leader, Conrad Innovator, OCSEF Honorable Mention.</p>
+          </div>
+          <div class="glass-card highlight-card">
+            <span class="highlight-icon">📷</span>
+            <h3>Photography</h3>
+            <p>I capture the world through my camera — from city skylines to quiet nature moments. Check out my photos section to see my work.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- AWARDS -->
+      <section class="section awards-section">
+        <div class="section-title">Awards & Recognition</div>
+        <p class="section-subtitle">Competition results and academic honors</p>
+        <div class="awards-list">
+          <div class="glass-card award-item">
+            <span class="award-icon">🥇</span>
+            <div class="award-info">
+              <div class="award-title">Grand Prix (Highest) — Music Fest Rising Talents Festival</div>
+              <div class="award-detail">Performed Rachmaninoff Etude Op. 33 No. 4 · New York, NY</div>
+            </div>
+            <span class="badge badge-gold">2026</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🥇</span>
+            <div class="award-info">
+              <div class="award-title">Gold (Highest) — Golden Key Music Festival</div>
+              <div class="award-detail">Performed Rachmaninoff Etude Op. 33 No. 4 · New York, NY</div>
+            </div>
+            <span class="badge badge-gold">Dec 2025</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🎹</span>
+            <div class="award-info">
+              <div class="award-title">Best Chopin Performance Second Prize — Great Composers Competition</div>
+              <div class="award-detail">Performed Rachmaninoff Etude Op. 33 No. 4</div>
+            </div>
+            <span class="badge badge-purple">Mar 2026</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🥇</span>
+            <div class="award-info">
+              <div class="award-title">First Place — Prima Volta Music Competition Summer Edition</div>
+              <div class="award-detail"></div>
+            </div>
+            <span class="badge badge-gold">Aug 2025</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🥇</span>
+            <div class="award-info">
+              <div class="award-title">Grand Prix (Highest) — Music Fest Rising Talents 2024–25</div>
+              <div class="award-detail">Performed Fantaisie Impromptu Op. 66 · Carnegie Hall, March 29, 2025</div>
+            </div>
+            <span class="badge badge-gold">Feb 2025</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🥇</span>
+            <div class="award-info">
+              <div class="award-title">Gold (Highest) — Golden Key Music Festival 2025</div>
+              <div class="award-detail">Performed Fantaisie Impromptu Op. 66 · Carnegie Hall, May 17, 2025</div>
+            </div>
+            <span class="badge badge-gold">Feb 2025</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🎓</span>
+            <div class="award-info">
+              <div class="award-title">College Board National Recognition Program</div>
+              <div class="award-detail">Outstanding performance on PSAT and/or AP Exams</div>
+            </div>
+            <span class="badge badge-cyan">Jun 2026</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🔬</span>
+            <div class="award-info">
+              <div class="award-title">Honorable Mention — Orange County Science & Engineering Fair (OCSEF)</div>
+              <div class="award-detail">AI-powered pet camera add-on software</div>
+            </div>
+            <span class="badge badge-indigo">Mar 2026</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">💡</span>
+            <div class="award-info">
+              <div class="award-title">Conrad Innovator — Conrad Challenge</div>
+              <div class="award-detail">NeuroGarden: plant-based sensory design for neurodivergent individuals</div>
+            </div>
+            <span class="badge badge-green">Mar 2026</span>
+          </div>
+          <div class="glass-card award-item">
+            <span class="award-icon">🎮</span>
+            <div class="award-info">
+              <div class="award-title">Most Liked Game — NYU Coding for Game Design</div>
+              <div class="award-detail">Among all students who participated in the summer program</div>
+            </div>
+            <span class="badge badge-cyan">Aug 2025</span>
+          </div>
+        </div>
+      </section>
+
     </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer class="page-footer" style="background-color: #355E3B;">
-    <div class="container center-align">
-      <p class="black-text">© 2025 James Chen. All rights reserved.</p>
-    </div>
+  <footer class="glass-footer">
+    <p>© 2025 Pinzhang (James) Chen · Newport Coast, CA · <a href="mailto:28ChenP@sagehillschool.org">28ChenP@sagehillschool.org</a></p>
   </footer>
 
-  <!-- Materialize JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      M.Sidenav.init(elems);
-    });
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
